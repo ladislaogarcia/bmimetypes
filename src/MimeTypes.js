@@ -6,8 +6,6 @@ import MIME_TYPES, {
 
 class MimeTypes {
 
-    constructor() {}
-
     static #isValidString(fileName) {
         return fileName
             && typeof fileName === 'string'
@@ -46,8 +44,11 @@ class MimeTypes {
         } catch(err) {
             return err;
         }
-        const fileExtsByMagics = MagicNumbers
-            .getFileExtensionsByMagicNumbers(magicNumbersByFile);
+        const fileExtsByMagics = magicNumbersByFile
+            ? MagicNumbers.getFileExtensionsByMagicNumbers(magicNumbersByFile)
+            : fileExtByFileName;
+        if(!magicNumbersByFile)
+            magicNumbersByFile = magicNumbersByExtension;
         const hasSameMagicNums = magicNumbersByExtension === magicNumbersByFile;
         if( !fileExtsByMagics.length ) return DEFAULT_MIME_TYPE;
         const isValidExtension = fileExtsByMagics.includes(fileExtByFileName);

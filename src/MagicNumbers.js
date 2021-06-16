@@ -3,7 +3,6 @@ import
 MAGIC_NUMBERS,
 { MAGIC_NUMBERS_ERROR_MESSAGES }
     from './MagicNumbersData';
-
 class MagicNumbers {
 
     static getFileExtension(fileName) {
@@ -12,7 +11,7 @@ class MagicNumbers {
     }
 
     static isValidString(str) {
-        return !str || typeof str !== 'string' || str.split(' ').join('');
+        return str && typeof str === 'string' && str.split(' ').join('') !== '';
     }
 
     static getFileExtensionsByMagicNumbers(magicNumbers) {
@@ -43,9 +42,12 @@ class MagicNumbers {
         const magicNumbersLength = magicNumbersObj.length
             ? magicNumbersObj[0].numbers.replace(/\s/g, '').length
             : 0;
+
         const fileHex = readFileSync(fileName).toString('hex');
         const magicNumbers = fileHex.slice(0, magicNumbersLength);
-        const magicNumbersHexString = magicNumbers.match(/../g).join(' ');
+        const magicNumbersHexString = magicNumbers ?
+            magicNumbers.match(/../g).join(' ') :
+            false;
 
         return magicNumbersHexString;
     }
