@@ -2,7 +2,7 @@
   "name": "bmimetypes",
   "version": "1.0.0",
   "description": "Simple class to get the content-type from a file given",
-  "main": "MimeTypes.js",
+  "main": "./build/MagicNumbers.js",
   "dependencies": {
     "@babel/eslint-parser": "^7.14.5",
     "@babel/polyfill": "^7.12.1",
