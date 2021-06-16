@@ -104,6 +104,4 @@ This is made over the main method of this class:&nbsp;&nbsp;**getContentType**
 
 <br/>
 
-## Simple build for production
-
-    $ yarn build
+NOT FINISHED DOCS
