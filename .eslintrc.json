@@ -1,0 +1,55 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "parser": "@babel/eslint-parser",
+    "extends": "eslint:recommended",
+    "ignorePatterns": [
+        "build/**"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 12,
+        "sourceType": "module",
+        "requireConfigFile": false
+    },
+    "rules": {
+        "camelcase": [
+            "error",
+            {
+                "properties": "never"
+            }
+        ],
+        "computed-property-spacing": [
+            "error",
+            "never"
+        ],
+        "class-methods-use-this": "error",
+        "indent": [
+            "error",
+            4
+        ],
+        "linebreak-style": [
+            "error",
+            "windows"
+        ],
+        "max-len": [
+            "error",
+            80
+        ],
+        "no-extra-parens": "error",
+        "no-sequences": "error",
+        "no-spaced-func": "error",
+        "no-trailing-spaces": "error",
+        "no-undef-init": "error",
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "vars-on-top": "warn"
+    }
+}
