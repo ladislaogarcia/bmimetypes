@@ -99,6 +99,13 @@ const MIME_TYPES = [
     },
     {
         'extensions': [
+            '.txt'
+        ],
+        'mimetype': 'text/plain',
+        'description': 'Texto plano'
+    },
+    {
+        'extensions': [
             '.htm',
             '.html'
         ],
