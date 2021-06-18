@@ -8,8 +8,6 @@ Simple class to get the content-type from a given file. Over its magic numbers a
 
 ***( This list will continue growing up )***
 
-<br>
-
 ---
 ## Requirements
 
@@ -116,33 +114,32 @@ This is made over the main method of this class called **getContentType**.
 <br/>
 
 ## ***MimeTypes** class* - **Methods** *(all statics)*
+
+| method name |  params  | returns |
+| ---  | --- | --- |
+| **getContentType(** *fileName* **)** <sup>1</sup>   | **fileName**: *Name of the file you want to get the 'Content-Type'*.  | File Content-Type ( *default*: **'application/octet-stream'**)  |
+| **getMimeTypeFromExtension** *fileExtension* **)**  | **fileExtension**: *File extension which you want to get the 'Content-Type'*.  |  |
+| **getMimeTypeFromFileName(** *filename* **)** <sup>2</sup> | **fileName**: *Name of the file you want to get the 'Content-Type'*.  |    |
+
+<hr/>
+<sup>1</sup>&nbsp;&nbsp;File must exists. It will throw an error if it foesn´t exists.
 <br/>
-
-Method name |  params   |   default |   returns |   notes
--           |-          |-          |-          |-
-**getContentType(** *fileName* **)**    | **fileName**: *Name of the file you want to get the 'Content-Type'*.  |   | File Content-Type ( *default*: **'application/octet-stream'**)  |   File must exists
-**getMimeTypeFromExtension** *fileExtension* **)**  | **fileExtension**: *File extension which you want to get the 'Content-Type'*.  |  
-**getMimeTypeFromFileName(** *filename* **)**   | **fileName**: *Name of the file you want to get the 'Content-Type'*.  |  |    | an ***alias*** for **getContentType(** *fileName* **)** 
-
+<sup>2</sup>&nbsp;&nbsp;An alias for **getContentType** method
+<br/>
 <br/>
 
 There is another class that is exposed to make this package more useful. It is called **MagicNumbers** class. It can get the magic numbers from a given file, if it is possible.
 
 <br/>
 
-<hr/>
-<br/>
-
 ## ***MagicNumbers** class* - **Methods** *(all statics)*
-<br/>
 
-Method name |  params   |   default |   Notes
--           |-          |-          |-
-**getMagicNumbersByFile(** *fileName* **)**    | **fileName**: *Name of the file you want to get the 'Magic Numbers'*.  |   | File must exists
-**getMagicNumbersByFileExtension(** *fileExtension* **)**    | **fileExtension**: *File extension which you want to get the 'Magic Numbers'*  |   | 
-**getFileExtensionByMagicNumbers(** *magicNumbers* **)**    | **magicNumbers**: *'Magic Numbers'* which you want to get the extension  | 
+| method name |  params  | returns |
+| ---  | --- | --- |
+| **getMagicNumbersByFile(** *fileName* **)**    | **fileName**: *Name of the file you want to get the 'Magic Numbers'*.  |  |
+| **getMagicNumbersByFileExtension(** *fileExtension* **)**    | **fileExtension**: *File extension which you want to get the 'Magic Numbers'*  |   |
+| **getFileExtensionByMagicNumbers(** *magicNumbers* **)**    | **magicNumbers**: *'Magic Numbers'* which you want to get the extension  |  | 
 
-<br/>
 <br/>
 
 ## Extending

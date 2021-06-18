@@ -38,26 +38,31 @@ class MimeTypes {
 
   static getContentType(filename) {
     if (!_classStaticPrivateMethodGet(MimeTypes, MimeTypes, _isValidString).call(MimeTypes, filename)) throw new Error(_MimeTypesData.MIME_TYPES_ERROR_MESSAGES.FILE_NOT_EXISTS);
-    const fileExtByFileName = MimeTypes.getExtensionFromFileName(filename);
+    const extByFileName = MimeTypes.getExtensionFromFileName(filename);
     let magicNumbersByExtension = null;
     let magicNumbersByFile = null;
 
     try {
-      magicNumbersByExtension = _MagicNumbers.default.getMagicNumbersByFileExtension(fileExtByFileName);
+      magicNumbersByExtension = _MagicNumbers.default.getMagicNumbersByFileExtension(extByFileName);
       magicNumbersByFile = _MagicNumbers.default.getMagicNumbersByFile(filename);
     } catch (err) {
       return err;
     }
 
-    const fileExtsByMagics = magicNumbersByFile ? _MagicNumbers.default.getFileExtensionsByMagicNumbers(magicNumbersByFile) : fileExtByFileName;
+    const fileExtsByMagics = magicNumbersByFile ? _MagicNumbers.default.getFileExtensionsByMagicNumbers(magicNumbersByFile) : extByFileName;
     if (!magicNumbersByFile) magicNumbersByFile = magicNumbersByExtension;
     const hasSameMagicNums = magicNumbersByExtension === magicNumbersByFile;
-    if (!fileExtsByMagics.length) return _MimeTypesData.DEFAULT_MIME_TYPE;
-    const isValidExtension = fileExtsByMagics.includes(fileExtByFileName); // FILE AND FILENAME DO NOT HAVE THE SAME MAGIC NUMBERS
+
+    if (!fileExtsByMagics.length) {
+      const mimeByExt = MimeTypes.getMimeTypeFromExtension(extByFileName);
+      return mimeByExt || _MimeTypesData.DEFAULT_MIME_TYPE;
+    }
+
+    const isValidExtension = fileExtsByMagics.includes(extByFileName); // FILE AND FILENAME DO NOT HAVE THE SAME MAGIC NUMBERS
     // AND/OR FILE EXTENSION ( BREACH TRY? )
 
     if (!hasSameMagicNums || !isValidExtension) throw new Error(_MimeTypesData.MIME_TYPES_ERROR_MESSAGES.DIFFERENT_MAGIC_NUMBERS);
-    return MimeTypes.getMimeTypeFromExtension(fileExtByFileName);
+    return MimeTypes.getMimeTypeFromExtension(extByFileName);
   }
 
 }
