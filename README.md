@@ -8,8 +8,6 @@ Simple class to get the content-type from a given file. Over its magic numbers a
 
 ***( This list will continue growing up )***
 
-<br>
-
 ---
 ## Requirements
 
