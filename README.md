@@ -128,6 +128,7 @@ This is made over the main method of this class called **getContentType**.
 <br/>
 <sup>2</sup>&nbsp;&nbsp;An alias for **getContentType** method
 <br/>
+<br/>
 
 There is another class that is exposed to make this package more useful. It is called **MagicNumbers** class. It can get the magic numbers from a given file, if it is possible.
 
