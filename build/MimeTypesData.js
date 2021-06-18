@@ -61,6 +61,10 @@ const MIME_TYPES = [{
   'mimetype': 'image/gif',
   'description': 'Graphics Interchange Format (GIF)'
 }, {
+  'extensions': ['.txt'],
+  'mimetype': 'text/plain',
+  'description': 'Texto plano'
+}, {
   'extensions': ['.htm', '.html'],
   'mimetype': 'text/html',
   'description': 'Hipertexto (HTML)'
