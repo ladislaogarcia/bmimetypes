@@ -3,9 +3,10 @@
 import MagicNumbers from '../src/MagicNumbers';
 import path from 'path';
 
-const fileName = path.join(__dirname, '..', 'demo.ai');
+const fileExtension = '.pdf';
+const fileName = path.join(__dirname, 'res', `test${fileExtension}`);
 const magicNumbers = '25 50 44 46';
-const fileExtension = '.ai';
+
 describe('MagicNumbers class test', () => {
 
     test('Extract file extension with "getFileExtension" method', () => {

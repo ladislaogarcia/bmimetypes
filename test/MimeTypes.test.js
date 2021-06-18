@@ -3,31 +3,29 @@
 import MimeTypes from '../src/MimeTypes';
 import path from 'path';
 
-const fileName = path.join(__dirname, 'MimeTypes.test.js');
+const fileExtension = '.pdf';
+const mimeType = 'application/pdf';
+const fileName = path.join(__dirname, 'res', `test${fileExtension}`);
+
 describe('MimeTypes class test', () => {
 
     test('Extract mime-type over file extension with "getMimeTypeFromExtension" method', () => {
-        const fileExtension = '.js';
-        const expected = 'application/javascript';
         const mimeTypeByFileExtension = MimeTypes.getMimeTypeFromExtension(fileExtension);
-        expect(mimeTypeByFileExtension).toEqual(expected);
+        expect(mimeTypeByFileExtension).toEqual(mimeType);
     });
     test('Extract file extension over a filename given with "getExtensionFromFileName" method', () => {
-        const expected = '.js';
         const fleExtensionByFileName = MimeTypes.getExtensionFromFileName(fileName);
-        expect(fleExtensionByFileName).toEqual(expected);
+        expect(fleExtensionByFileName).toEqual(fileExtension);
     });
 
     test('Extract mime-type over file with "getMimeTypeFromFileName" method', () => {
-        const expected = 'application/javascript';
         const mimeTypeByFileExtension = MimeTypes.getMimeTypeFromFileName(fileName);
-        expect(mimeTypeByFileExtension).toEqual(expected);
+        expect(mimeTypeByFileExtension).toEqual(mimeType);
     });
 
     test('Extract mime-type over file with "getContentType" method', () => {
-        const expected = 'application/javascript';
         const mimeTypeByFileExtension = MimeTypes.getContentType(fileName);
-        expect(mimeTypeByFileExtension).toEqual(expected);
+        expect(mimeTypeByFileExtension).toEqual(mimeType);
     });
 
 });
