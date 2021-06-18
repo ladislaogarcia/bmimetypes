@@ -116,7 +116,6 @@ This is made over the main method of this class called **getContentType**.
 <br/>
 
 ## ***MimeTypes** class* - **Methods** *(all statics)*
-<br/>
 
 | method name |  params  | returns |
 | ---  | --- | --- |
@@ -124,23 +123,17 @@ This is made over the main method of this class called **getContentType**.
 | **getMimeTypeFromExtension** *fileExtension* **)**  | **fileExtension**: *File extension which you want to get the 'Content-Type'*.  |  |
 | **getMimeTypeFromFileName(** *filename* **)** <sup>2</sup> | **fileName**: *Name of the file you want to get the 'Content-Type'*.  |    |
 
-<hr>
+<hr/>
 <sup>1</sup>&nbsp;&nbsp;File must exists. It will throw an error if it foesn´t exists.
 <br/>
 <sup>2</sup>&nbsp;&nbsp;An alias for **getContentType** method
-<br/>
-<hr>
 <br/>
 
 There is another class that is exposed to make this package more useful. It is called **MagicNumbers** class. It can get the magic numbers from a given file, if it is possible.
 
 <br/>
 
-<hr/>
-<br/>
-
 ## ***MagicNumbers** class* - **Methods** *(all statics)*
-<br/>
 
 | method name |  params  | returns |
 | ---  | --- | --- |
@@ -148,7 +141,6 @@ There is another class that is exposed to make this package more useful. It is c
 | **getMagicNumbersByFileExtension(** *fileExtension* **)**    | **fileExtension**: *File extension which you want to get the 'Magic Numbers'*  |   |
 | **getFileExtensionByMagicNumbers(** *magicNumbers* **)**    | **magicNumbers**: *'Magic Numbers'* which you want to get the extension  |  | 
 
-<br/>
 <br/>
 
 ## Extending
