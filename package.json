@@ -1,6 +1,6 @@
 {
   "name": "bmimetypes",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple class to get the content-type from a file given",
   "main": "./build/MimeTypes.js",
   "dependencies": {
@@ -19,8 +19,8 @@
     "jest": "^27.0.4"
   },
   "scripts": {
+    "demo": "node -r esm demo.js --dev",
     "dev": "node -r esm demo.js",
-    "demo": "npm run dev",
     "test": "jest",
     "test:coverage": "npm run test -- --coverage",
     "test:watch": "npm run test -- --watch",

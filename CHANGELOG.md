@@ -1,4 +1,8 @@
 ### 1.0.1
+- Parametrize demo for demo and dev
+- New build
+- Fix table README.md for Github
+### 1.0.1
 - Complete documentation
 - Add look for content-type by file extension before return default content type
 - Added '.txt' support

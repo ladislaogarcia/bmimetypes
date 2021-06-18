@@ -119,7 +119,7 @@ This is made over the main method of this class called **getContentType**.
 <br/>
 
 | method name |  params  | returns |   notes |
-| ---  | --- | --- | --- | --- |
+| ---  | --- | --- | --- |
 | **getContentType(** *fileName* **)**    | **fileName**: *Name of the file you want to get the 'Content-Type'*.  | File Content-Type ( *default*: **'application/octet-stream'**)  |   File must exists |
 | **getMimeTypeFromExtension** *fileExtension* **)**  | **fileExtension**: *File extension which you want to get the 'Content-Type'*.  |  |  |
 | **getMimeTypeFromFileName(** *filename* **)**   | **fileName**: *Name of the file you want to get the 'Content-Type'*.  |    | an ***alias*** for **getContentType(** *fileName* **)** |
@@ -137,7 +137,7 @@ There is another class that is exposed to make this package more useful. It is c
 <br/>
 
 | method name |  params  | returns |  notes |
-| ---  | --- | --- | --- | --- |
+| ---  | --- | --- | --- |
 | **getMagicNumbersByFile(** *fileName* **)**    | **fileName**: *Name of the file you want to get the 'Magic Numbers'*.  |  | File must exists
 | **getMagicNumbersByFileExtension(** *fileExtension* **)**    | **fileExtension**: *File extension which you want to get the 'Magic Numbers'*  |   |   |
 | **getFileExtensionByMagicNumbers(** *magicNumbers* **)**    | **magicNumbers**: *'Magic Numbers'* which you want to get the extension  |  |   |
