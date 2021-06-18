@@ -118,7 +118,7 @@ This is made over the main method of this class called **getContentType**.
 ## ***MimeTypes** class* - **Methods** *(all statics)*
 <br/>
 
-| Method name |  params  |   default |   returns |   notes |
+| method name |  params  |   default |   returns |   notes |
 | ---  | --- | --- | --- | --- |
 | **getContentType(** *fileName* **)**    | **fileName**: *Name of the file you want to get the 'Content-Type'*.  |   | File Content-Type ( *default*: **'application/octet-stream'**)  |   File must exists |
 | **getMimeTypeFromExtension** *fileExtension* **)**  | **fileExtension**: *File extension which you want to get the 'Content-Type'*.  |  |  |  |
@@ -136,11 +136,11 @@ There is another class that is exposed to make this package more useful. It is c
 ## ***MagicNumbers** class* - **Methods** *(all statics)*
 <br/>
 
-Method name |  params   |   default |   Notes
--           |-          |-          |-
-**getMagicNumbersByFile(** *fileName* **)**    | **fileName**: *Name of the file you want to get the 'Magic Numbers'*.  |   | File must exists
-**getMagicNumbersByFileExtension(** *fileExtension* **)**    | **fileExtension**: *File extension which you want to get the 'Magic Numbers'*  |   | 
-**getFileExtensionByMagicNumbers(** *magicNumbers* **)**    | **magicNumbers**: *'Magic Numbers'* which you want to get the extension  | 
+| method name |  params  |   default |   returns |   notes |
+| ---  | --- | --- | --- | --- |
+| **getMagicNumbersByFile(** *fileName* **)**    | **fileName**: *Name of the file you want to get the 'Magic Numbers'*.  |   |  | File must exists
+| **getMagicNumbersByFileExtension(** *fileExtension* **)**    | **fileExtension**: *File extension which you want to get the 'Magic Numbers'*  |   |   |   |
+| **getFileExtensionByMagicNumbers(** *magicNumbers* **)**    | **magicNumbers**: *'Magic Numbers'* which you want to get the extension  |  |   |   |
 
 <br/>
 <br/>
