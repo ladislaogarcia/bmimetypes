@@ -1,6 +1,10 @@
 import MimeTypes from './src/MimeTypes';
-const filename = './demo.ai';
-const mimetype = MimeTypes.getMimeTypeFromFileName(filename);
-console.log(`The file "${filename}" has a mime-type of "${mimetype}"`);
+import {readdirSync} from 'fs';
 
-console.log(`Content-type: ${MimeTypes.getContentType(filename)}`);
+const demoFolder = './demo';
+const fileNames = readdirSync(demoFolder);
+fileNames.forEach( fileName => {
+    const filePath = `${demoFolder}/${fileName}`;
+    const contentType = MimeTypes.getContentType(filePath);
+    console.log(`${fileName} has a Content-Type of ${contentType}`);
+});

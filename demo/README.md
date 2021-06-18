@@ -1,15 +1,6 @@
 # bmimetypes
 Simple class to get the content-type from a given file. Over its magic numbers and its extension.
 
-<br>
-
-## SUPPORTED FILES & EXTENSIONS
-.aac, .abw, .arc, .avi, .azw, .bin, .bz, .bz2, .csh, .css, .csv, .doc, .epub, .gif, .txt, .htm, .html, .ico, .ics, .jar, .jpeg, .jpg, .js, .json, .mid, .midi, .mpeg, .mpkg, .odp, .ods, .odt, .oga, .ogv, .ogx, .pdf, .ai, .ppt, .rar, .rtf, .sh, .svg, .swf, .tar, .tif, .tiff, .ttf, .vsd, .wav, .weba, .webm, .webp, .woff, .woff2, .xhtml, .xls, .xml, .xul, .zip, .3gp, .3g2, .7z
-
-***( This list will continue growing up )***
-
-<br>
-
 ---
 ## Requirements
 
@@ -52,13 +43,13 @@ But,it is recommended to install, at least, these ones.
 If you need to update `npm`, you can make it using `npm`! Cool right? After running the following command, just open again the command line and be happy.
 
     npm install npm -g
-<br/>
 
-# How to use
+
 
 ## Installing
 
     npm install --save bmimetypes
+
 
 ## Requiring
 Just import in your file as you would do with any other package.
@@ -67,8 +58,11 @@ Just import in your file as you would do with any other package.
 import MimeTypes from 'bmimetypes'
 ```
 
+
 ## Using
 Use the statics methods as usual.
+
+<br/>
 
 ```javascript
 import MimeTypes from 'bmimetypes'
@@ -160,6 +154,7 @@ class MyMimeTypes extends MimeTypes {
 <br/>
 
 I hope you like this package. Leave comments, issues,...
+
 <br/>
 
 ## ...and many thanks !!! ##

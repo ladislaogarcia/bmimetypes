@@ -31,14 +31,14 @@ class MimeTypes {
     static getContentType(filename) {
         if (!MimeTypes.#isValidString(filename))
             throw new Error(MIME_TYPES_ERROR_MESSAGES.FILE_NOT_EXISTS);
-        const fileExtByFileName = MimeTypes
+        const extByFileName = MimeTypes
             .getExtensionFromFileName(filename);
         let magicNumbersByExtension = null;
         let magicNumbersByFile = null;
         try {
             magicNumbersByExtension = MagicNumbers
                 .getMagicNumbersByFileExtension(
-                    fileExtByFileName
+                    extByFileName
                 );
             magicNumbersByFile = MagicNumbers.getMagicNumbersByFile(filename);
         } catch(err) {
@@ -46,17 +46,20 @@ class MimeTypes {
         }
         const fileExtsByMagics = magicNumbersByFile
             ? MagicNumbers.getFileExtensionsByMagicNumbers(magicNumbersByFile)
-            : fileExtByFileName;
+            : extByFileName;
         if(!magicNumbersByFile)
             magicNumbersByFile = magicNumbersByExtension;
         const hasSameMagicNums = magicNumbersByExtension === magicNumbersByFile;
-        if( !fileExtsByMagics.length ) return DEFAULT_MIME_TYPE;
-        const isValidExtension = fileExtsByMagics.includes(fileExtByFileName);
+        if( !fileExtsByMagics.length ) {
+            const mimeByExt = MimeTypes.getMimeTypeFromExtension(extByFileName);
+            return mimeByExt || DEFAULT_MIME_TYPE;
+        }
+        const isValidExtension = fileExtsByMagics.includes(extByFileName);
         // FILE AND FILENAME DO NOT HAVE THE SAME MAGIC NUMBERS
         // AND/OR FILE EXTENSION ( BREACH TRY? )
         if( !hasSameMagicNums || !isValidExtension )
             throw new Error(MIME_TYPES_ERROR_MESSAGES.DIFFERENT_MAGIC_NUMBERS);
-        return MimeTypes.getMimeTypeFromExtension(fileExtByFileName);
+        return MimeTypes.getMimeTypeFromExtension(extByFileName);
     }
 
 }
