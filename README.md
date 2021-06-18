@@ -1,5 +1,14 @@
 # bmimetypes
-Simple class to get the content-type from a file given. Based in its extension.
+Simple class to get the content-type from a given file. Over its magic numbers and its extension.
+
+<br>
+
+## SUPPORTED FILES & EXTENSIONS
+.aac, .abw, .arc, .avi, .azw, .bin, .bz, .bz2, .csh, .css, .csv, .doc, .epub, .gif, .txt, .htm, .html, .ico, .ics, .jar, .jpeg, .jpg, .js, .json, .mid, .midi, .mpeg, .mpkg, .odp, .ods, .odt, .oga, .ogv, .ogx, .pdf, .ai, .ppt, .rar, .rtf, .sh, .svg, .swf, .tar, .tif, .tiff, .ttf, .vsd, .wav, .weba, .webm, .webp, .woff, .woff2, .xhtml, .xls, .xml, .xul, .zip, .3gp, .3g2, .7z
+
+***( This list will continue growing up )***
+
+<br>
 
 ---
 ## Requirements
@@ -34,30 +43,45 @@ Also, be sure to have `git` available in your PATH, `npm` might need it (You can
 If the installation was successful, you should be able to run the following command. There might be some difference with the version shown by your terminal.
 But,it is recommended to install, at least, these ones.
 
-    $ node --version
+    node --version
     v14.17.0
 
-    $ npm --version
+    npm --version
     6.14.13
 
 If you need to update `npm`, you can make it using `npm`! Cool right? After running the following command, just open again the command line and be happy.
 
-    $ npm install npm -g
-
+    npm install npm -g
 <br/>
+
+# How to use
 
 ## Installing
 
-    $ npm install --save bmimetypes
-<br/>
+    npm install --save bmimetypes
 
 ## Requiring
 Just import in your file as you would do with any other package.
 
-    import { MimeTypes } from 'bmimetypes'
+```javascript
+import MimeTypes from 'bmimetypes'
+```
+
+## Using
+Use the statics methods as usual.
+
+```javascript
+import MimeTypes from 'bmimetypes'
+
+const fileName = './readme.txt';
+
+const cType = MimeTypes.getContentType(filename);
+
+console.log(`Content type of ${fileName} is ${cType}`);
+```
 <br/>
 
-## How it works
+# How it works
 
 **bmimetypes** is a node package with a few methods you can use. Developed over two javascript classes called **MimeTypes** and **MagicNumbers** that has all its members 'static'. Both of them.
 
@@ -75,7 +99,7 @@ There is an exception. If you want to get the 'Content-Type' of a file extension
 
 It makes in this way:
 
-1. Get the 'Content-Type' over its Magic Numbers.
+1. Get the 'Content-Type' over its Magic Numbers. If the file has got them.
 2. Get the 'Content-Type' over its extension.
 3. If there are some kind of issue, this class will throw an error:
     - If the Magic Numbers obtained in steps 1 and 2 above do not match.
@@ -87,21 +111,55 @@ It makes in this way:
 
 <br/>
 
-This is made over the main method of this class:&nbsp;&nbsp;**getContentType**
+This is made over the main method of this class called **getContentType**.
 
 <br/>
 
-### ***MimeTypes** class* - **Methods** *(all statics)*
+## ***MimeTypes** class* - **Methods** *(all statics)*
 <br/>
 
-**getContentType(** *filename* **)**: It receives a parameter called "filename" which is the name of the file you want to get the 'Content-Type'.
-<br/>
-
-**getMimeTypeFromExtension** *fileExtension* **)**: It receives a parameter called "filename" which is the name of the file you want to get the 'Content-Type'.
-<br/>
-
-**getMimeTypeFromFileName(** *filename* **)**: An alias of **getContentType**.
+Method name |  params   |   default |   returns |   notes
+-           |-          |-          |-          |-
+**getContentType(** *fileName* **)**    | **fileName**: *Name of the file you want to get the 'Content-Type'*.  |   | File Content-Type ( *default*: **'application/octet-stream'**)  |   File must exists
+**getMimeTypeFromExtension** *fileExtension* **)**  | **fileExtension**: *File extension which you want to get the 'Content-Type'*.  |  
+**getMimeTypeFromFileName(** *filename* **)**   | **fileName**: *Name of the file you want to get the 'Content-Type'*.  |  |    | an ***alias*** for **getContentType(** *fileName* **)** 
 
 <br/>
 
-NOT FINISHED DOCS
+There is another class that is exposed to make this package more useful. It is called **MagicNumbers** class. It can get the magic numbers from a given file, if it is possible.
+
+<br/>
+
+<hr/>
+<br/>
+
+## ***MagicNumbers** class* - **Methods** *(all statics)*
+<br/>
+
+Method name |  params   |   default |   Notes
+-           |-          |-          |-
+**getMagicNumbersByFile(** *fileName* **)**    | **fileName**: *Name of the file you want to get the 'Magic Numbers'*.  |   | File must exists
+**getMagicNumbersByFileExtension(** *fileExtension* **)**    | **fileExtension**: *File extension which you want to get the 'Magic Numbers'*  |   | 
+**getFileExtensionByMagicNumbers(** *magicNumbers* **)**    | **magicNumbers**: *'Magic Numbers'* which you want to get the extension  | 
+
+<br/>
+<br/>
+
+## Extending
+As every Javascript class, it can be extended. So, makes it your own use and collabote.
+
+<br/>
+
+```javascript
+import MimeTypes from 'bmimetypes'
+
+class MyMimeTypes extends MimeTypes {
+    ...
+}
+```
+<br/>
+
+I hope you like this package. Leave comments, issues,...
+<br/>
+
+## ...and many thanks !!! ##
