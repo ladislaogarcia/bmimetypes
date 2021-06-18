@@ -118,11 +118,11 @@ This is made over the main method of this class called **getContentType**.
 ## ***MimeTypes** class* - **Methods** *(all statics)*
 <br/>
 
-Method name |  params   |   default |   returns |   notes
--           |-          |-          |-          |-
-**getContentType(** *fileName* **)**    | **fileName**: *Name of the file you want to get the 'Content-Type'*.  |   | File Content-Type ( *default*: **'application/octet-stream'**)  |   File must exists
-**getMimeTypeFromExtension** *fileExtension* **)**  | **fileExtension**: *File extension which you want to get the 'Content-Type'*.  |  
-**getMimeTypeFromFileName(** *filename* **)**   | **fileName**: *Name of the file you want to get the 'Content-Type'*.  |  |    | an ***alias*** for **getContentType(** *fileName* **)** 
+| Method name |  params  |   default |   returns |   notes |
+| ---  | --- | --- | --- | --- |
+| **getContentType(** *fileName* **)**    | **fileName**: *Name of the file you want to get the 'Content-Type'*.  |   | File Content-Type ( *default*: **'application/octet-stream'**)  |   File must exists |
+| **getMimeTypeFromExtension** *fileExtension* **)**  | **fileExtension**: *File extension which you want to get the 'Content-Type'*.  |  |  |  |
+| **getMimeTypeFromFileName(** *filename* **)**   | **fileName**: *Name of the file you want to get the 'Content-Type'*.  |    |    | an ***alias*** for **getContentType(** *fileName* **)** |
 
 <br/>
 
