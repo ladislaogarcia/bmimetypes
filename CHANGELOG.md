@@ -1,3 +1,5 @@
+### 1.0.3
+- New minified build
 ### 1.0.1
 - Parametrize demo for demo and dev
 - New build

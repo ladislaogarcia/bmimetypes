@@ -1,4 +1,6 @@
-{    
+{
+    "compact": true,
+    "minified": true,
     "presets": [
         [
             "@babel/env",
@@ -11,7 +13,12 @@
                 },
                 "debug": true
             }
+        ],
+        [
+            "minify",
+            {
+                "keepFnName": true
+            }
         ]
     ]
 }
-
