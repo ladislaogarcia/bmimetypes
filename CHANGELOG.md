@@ -1,4 +1,5 @@
-
+### 1.0.5
+- Remove dependencies
 ### 1.0.4
 - Fix set-value vulnerability
 - Fix Babel-CoreJS warning
