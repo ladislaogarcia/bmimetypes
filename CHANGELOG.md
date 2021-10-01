@@ -1,6 +1,11 @@
+
+### 1.0.4
+- Fix set-value vulnerability
+- Fix Babel-CoreJS warning
+- Fix npm scripts flag
 ### 1.0.3
 - New minified build
-### 1.0.1
+### 1.0.2
 - Parametrize demo for demo and dev
 - New build
 - Fix table README.md for Github
