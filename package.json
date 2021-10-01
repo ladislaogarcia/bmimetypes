@@ -20,8 +20,8 @@
     "jest": "^27.0.4"
   },
   "scripts": {
-    "demo": "node -r esm demo.js --dev",
-    "dev": "node -r esm demo.js",
+    "demo": "node -r esm demo.js",
+    "dev": "node -r esm demo.js --dev",
     "test": "jest",
     "test:coverage": "npm run test -- --coverage",
     "test:watch": "npm run test -- --watch",
