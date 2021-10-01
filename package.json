@@ -1,6 +1,6 @@
 {
   "name": "bmimetypes",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Simple class to get the content-type from a file given",
   "main": "./build/MimeTypes.js",
   "dependencies": {
